@@ -67,7 +67,7 @@ EventLoop::Result EventLoop::wait_next_event(const int timeout_ms) {
     for (auto it = _rules.cbegin(); it != _rules.cend();) {  // NOTE: it gets erased or incremented in loop body
         const auto &this_rule = *it;
         if (this_rule.direction == Direction::In && this_rule.fd.eof()) {
-            // no more reading on this rule, it's reached eof
+            // no more reading on this rule, it's reached is_eof
             this_rule.cancel();
             it = _rules.erase(it);
             continue;

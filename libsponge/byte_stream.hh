@@ -2,6 +2,7 @@
 #define SPONGE_LIBSPONGE_BYTE_STREAM_HH
 
 #include <string>
+#include <vector>
 
 //! \brief An in-order byte stream.
 
@@ -10,12 +11,16 @@
 //! and then no more bytes can be written.
 class ByteStream {
   private:
-    // Your code here -- add private members as necessary.
+    std::vector<char> buffer;
+    bool is_eof;
+    size_t write_cnt, read_cnt, head, tail, remaining;
 
     // Hint: This doesn't need to be a sophisticated data structure at
     // all, but if any of your tests are taking longer than a second,
     // that's a sign that you probably want to keep exploring
     // different approaches.
+
+    size_t next(size_t i, size_t step) const;
 
     bool _error{};  //!< Flag indicating that the stream suffered an error.
 

@@ -4405,8 +4405,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -4835,8 +4835,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -6409,8 +6409,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/string/char_traits/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/string/char_traits/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -7386,8 +7386,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -8367,8 +8367,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -9991,8 +9991,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -10978,8 +10978,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -11282,8 +11282,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -12952,8 +12952,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -13841,8 +13841,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -14642,8 +14642,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -16367,8 +16367,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -17420,8 +17420,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -18285,8 +18285,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -21073,8 +21073,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -22252,8 +22252,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -23539,8 +23539,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -24295,8 +24295,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -24896,8 +24896,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -26323,8 +26323,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -27286,8 +27286,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -27741,8 +27741,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -28138,8 +28138,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -30040,8 +30040,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -30741,8 +30741,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -31275,8 +31275,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -31982,8 +31982,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -32816,8 +32816,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -33292,8 +33292,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -33713,8 +33713,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -34374,8 +34374,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
@@ -34791,8 +34791,8 @@
     </member>
     <member kind="function">
       <type>T</type>
-      <name>eof</name>
-      <anchorfile>cpp/io/basic_ios/eof</anchorfile>
+      <name>is_eof</name>
+      <anchorfile>cpp/io/basic_ios/is_eof</anchorfile>
       <anchor></anchor>
       <arglist>(T... args)</arglist>
     </member>
