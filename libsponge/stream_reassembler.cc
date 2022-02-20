@@ -17,7 +17,7 @@ bool operator<(const Substring &s1, const Substring &s2) {
 }
 
 StreamReassembler::StreamReassembler(const size_t capacity)
-    : _output(capacity), _capacity(capacity), first_index(0), queue(multiset<Substring>()) {}
+    : _output(capacity), _capacity(capacity), _first_unassembled_index(0), queue(multiset<Substring>()) {}
 
 //! \details This function accepts a substring (aka a segment) of bytes,
 //! possibly out-of-order, from the logical stream, and assembles any newly
@@ -28,12 +28,12 @@ void StreamReassembler::push_substring(const string &data, const size_t index, c
     bool _eof = eof;
     size_t remaining = _output.remaining_capacity();
     // Silently discard overflow
-    if (last_index > first_index + remaining) {
-        size_t len = data.size() - (last_index - first_index - remaining);
+    if (last_index > _first_unassembled_index + remaining) {
+        size_t len = data.size() - (last_index - _first_unassembled_index - remaining);
         _data = _data.substr(0, len);
         _eof = false;
     }
-    if (index + _data.size() < first_index)
+    if (index + _data.size() < _first_unassembled_index)
         return;
     queue.insert(Substring{index, _data, _eof});
     reassemble();
@@ -43,14 +43,14 @@ void StreamReassembler::reassemble() {
     while (!queue.empty()) {
         assert(!_output.input_ended());
         auto s = *queue.begin();
-        if (s.index <= first_index) {
-            if (s.index + s.data.length() < first_index) {
+        if (s.index <= _first_unassembled_index) {
+            if (s.index + s.data.length() < _first_unassembled_index) {
                 queue.erase(queue.begin());
             } else {
-                size_t len = s.data.length() - first_index + s.index;
-                auto data = s.data.substr(first_index - s.index, len);
+                size_t len = s.data.length() - _first_unassembled_index + s.index;
+                auto data = s.data.substr(_first_unassembled_index - s.index, len);
                 _output.write(data);
-                first_index += len;
+                _first_unassembled_index += len;
                 if (s.eof)
                     _output.end_input();
                 queue.erase(queue.begin());
@@ -62,7 +62,7 @@ void StreamReassembler::reassemble() {
 }
 
 size_t StreamReassembler::unassembled_bytes() const {
-    size_t last_index = first_index;
+    size_t last_index = _first_unassembled_index;
     size_t count = 0;
     for (const auto &s : queue) {
         size_t len = s.data.length();
@@ -78,3 +78,5 @@ size_t StreamReassembler::unassembled_bytes() const {
 }
 
 bool StreamReassembler::empty() const { return queue.empty() && _output.buffer_empty(); }
+
+size_t StreamReassembler::first_unassembled_index() const { return _first_unassembled_index; }
