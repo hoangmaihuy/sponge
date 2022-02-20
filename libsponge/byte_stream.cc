@@ -11,7 +11,7 @@
 using namespace std;
 
 ByteStream::ByteStream(const size_t capacity)
-    : buffer(vector<char>(capacity)), is_eof(false), write_cnt(0), read_cnt(0), head(0), tail(0), remaining(capacity) {}
+    : buffer(capacity), is_eof(false), write_cnt(0), read_cnt(0), head(0), tail(0), remaining(capacity) {}
 
 size_t ByteStream::next(size_t i, size_t step = 1) const { return (i + step) % buffer.size(); }
 
