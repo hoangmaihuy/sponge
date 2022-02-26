@@ -5,11 +5,18 @@
 #include "tcp_config.hh"
 #include "tcp_segment.hh"
 #include "wrapping_integers.hh"
+#include "timer.hh"
 
 #include <functional>
 #include <queue>
+#include <set>
 
 //! \brief The "sender" part of a TCP implementation.
+
+struct TransmittingSegment {
+    size_t seqno;
+    TCPSegment tcp_segment;
+};
 
 //! Accepts a ByteStream, divides it up into segments and sends the
 //! segments, keeps track of which segments are still in-flight,
@@ -23,14 +30,28 @@ class TCPSender {
     //! outbound queue of segments that the TCPSender wants sent
     std::queue<TCPSegment> _segments_out{};
 
+    std::multiset<TransmittingSegment> _segments_transmitting{};
+
     //! retransmission timer for the connection
     unsigned int _initial_retransmission_timeout;
+
+    size_t _retransmission_timeout;
+
+    Timer _timer;
 
     //! outgoing stream of bytes that have not yet been sent
     ByteStream _stream;
 
     //! the (absolute) sequence number for the next byte to be sent
     uint64_t _next_seqno{0};
+
+    uint64_t _ackno{0};
+
+    uint16_t _window_size{1};
+
+    unsigned int _consecutive_retranmissions{0};
+
+    void _retransmit();
 
   public:
     //! Initialize a TCPSender
