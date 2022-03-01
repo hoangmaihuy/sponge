@@ -145,6 +145,7 @@ void TCPTestHarness::execute(const TCPTestStep &step, std::string note) {
     try {
         step.execute(*this);
         while (not _fsm.segments_out().empty()) {
+//            cerr << "received segment:\n" << _fsm.segments_out().front().header().to_string() << "\n";
             _flt.write(_fsm.segments_out().front());
             _fsm.segments_out().pop();
         }

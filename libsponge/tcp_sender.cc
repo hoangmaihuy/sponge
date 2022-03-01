@@ -36,9 +36,14 @@ size_t TCPSender::bytes_in_flight() const {
     return bytes_count;
 }
 
+bool TCPSender::is_fin_sent() const {
+    size_t last_seqno = _stream.bytes_written() + _stream.input_ended() + 1;
+    return _next_seqno == last_seqno && _stream.eof();
+}
+
+
 void TCPSender::fill_window() {
 //    cerr << "fill_window: " << _stream.eof() << " " << _stream.bytes_written() << " " << _next_seqno << " " << _window_size << "\n";
-    // input ended, sent all
     size_t last_seqno = _stream.bytes_written() + _stream.input_ended() + 1;
     if (_next_seqno == last_seqno)
         return;
@@ -55,6 +60,7 @@ void TCPSender::fill_window() {
     header.seqno = wrap(_next_seqno, _isn);
     segment.header() = header;
     segment.payload() = payload;
+//    cerr << "sending segment " << segment.header().to_string() << "payload size: " << payload.size() << "\n";
     _segments_out.push(segment);
     if (_segments_transmitting.empty())
         _timer.reset(_retransmission_timeout);
@@ -110,6 +116,8 @@ void TCPSender::_retransmit() {
         _consecutive_retranmissions++;
         _retransmission_timeout *= 2;
     }
+    if (_consecutive_retranmissions > TCPConfig::MAX_RETX_ATTEMPTS)
+        return;
     auto segment = _segments_transmitting.begin()->tcp_segment;
     _segments_out.push(segment);
     _timer.reset(_retransmission_timeout);
@@ -117,14 +125,18 @@ void TCPSender::_retransmit() {
 
 unsigned int TCPSender::consecutive_retransmissions() const { return _consecutive_retranmissions; }
 
-void TCPSender::send_empty_segment() {
+void TCPSender::send_empty_segment(bool rst) {
     TCPHeader header;
     TCPSegment segment;
     header.seqno = wrap(_next_seqno, _isn);
     header.syn = !_next_seqno;
-    header.fin = _stream.input_ended();
+//    header.fin = _stream.eof();
+    header.rst = rst;
+//    cerr << "send empty segment, rst = " << rst << ", syn = " << header.syn << "\n";
     segment.header() = header;
     segment.payload() = Buffer("");
     _segments_out.push(segment);
+    if (header.syn)
+        _segments_transmitting.insert({_next_seqno, segment});
     _next_seqno += segment.length_in_sequence_space();
 }
