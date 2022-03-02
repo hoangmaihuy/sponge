@@ -50,7 +50,7 @@ class NetworkInterface {
 
     std::map<uint32_t, size_t> _arp_sent_at{}; // ip -> time sent
 
-    std::map<uint32_t, std::queue<std::pair<InternetDatagram, size_t>>> _dgram_queue_map{};
+    std::map<uint32_t, std::queue<InternetDatagram>> _dgram_queue_map{};
 
     void _arp_request(uint32_t ip_addr);
 

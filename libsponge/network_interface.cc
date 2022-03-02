@@ -37,8 +37,8 @@ void NetworkInterface::send_datagram(const InternetDatagram &dgram, const Addres
     if (addr_entry == _arp_table.end() || addr_entry->second.second < _timer) {
         auto it = _dgram_queue_map.find(next_hop_ip);
         if (it == _dgram_queue_map.end())
-            _dgram_queue_map[next_hop_ip] = queue<pair<InternetDatagram, size_t>>();
-        _dgram_queue_map[next_hop_ip].push(make_pair(dgram, _timer));
+            _dgram_queue_map[next_hop_ip] = queue<InternetDatagram>();
+        _dgram_queue_map[next_hop_ip].push(dgram);
         _arp_request(next_hop_ip);
         return;
     }
@@ -61,9 +61,8 @@ void NetworkInterface::_send_queued_datagram(const EthernetAddress &eth_addr, ui
         return;
     auto &dgram_queue = it->second;
     while (!dgram_queue.empty()) {
-        const pair<InternetDatagram, size_t> &dgram = dgram_queue.front();
-//        if (dgram.second + dgram.first.header().ttl <= _timer)
-        _send_datagram(dgram.first, eth_addr);
+        const InternetDatagram &dgram = dgram_queue.front();
+        _send_datagram(dgram, eth_addr);
         dgram_queue.pop();
     }
     _dgram_queue_map.erase(it);
