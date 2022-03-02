@@ -1,4 +1,4 @@
-#include "socket.hh"
+#include "tcp_sponge_socket.hh"
 #include "util.hh"
 
 #include <cstdlib>
@@ -20,7 +20,7 @@ void get_URL(const string &host, const string &path) {
     cerr << "Function called: get_URL(" << host << ", " << path << ").\n";
 
     auto address = Address(host, "http");
-    TCPSocket sock;
+    FullStackSocket sock;
     sock.connect(address);
     string message = "GET " + path + " HTTP/1.1\r\n"
                      "Host: " + host + "\r\n"
@@ -30,6 +30,7 @@ void get_URL(const string &host, const string &path) {
     while (!sock.eof()) {
         cout << sock.read();
     }
+    sock.wait_until_closed();
     sock.close();
 }
 
